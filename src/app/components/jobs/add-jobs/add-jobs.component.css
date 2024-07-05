@@ -1,0 +1,19 @@
+.user-registration,.register-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:30px;
+    
+}
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.validation-text{
+    color:red;
+}
+mat-expansion-panel{
+    width:400px;
+}
