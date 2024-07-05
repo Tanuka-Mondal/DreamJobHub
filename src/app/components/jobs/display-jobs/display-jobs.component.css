@@ -1,0 +1,21 @@
+.example-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    margin: 30px;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+mat-card-subtitle{
+    text-align: center;
+}
+mat-card-title{
+    text-align: center;
+}
