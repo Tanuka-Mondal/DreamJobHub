@@ -1,0 +1,26 @@
+<div class="cards">
+  <div *ngFor="let item of jobs">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{item.jobTitle}}</mat-card-title>
+        <mat-card-subtitle>{{item.companyName}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{item.jobDescription}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" *ngIf="item.id" (click)="viewJobDetails(item.id)">VIEW</button>
+        <button mat-button color="primary" *ngIf="userLoggedinStatus && userRole === 'User'">APPLY</button>
+        <button mat-button color="primary" *ngIf="userLoggedinStatus && userRole === 'Admin'"
+          (click)="editJob(item.id)">EDIT</button>
+        <!-- <button mat-button color="warn" *ngIf="userLoggedinStatus && userRole === 'Admin'" (click)="deleteJob(item.id)">DELETE</button> -->
+        <!-- <app-delete-job *ngIf="userLoggedinStatus && userRole === 'Admin'" [jobId]="item.id"></app-delete-job> -->
+        <!-- display-jobs.component.html -->
+
+        <app-delete-job *ngIf="userLoggedinStatus && userRole === 'Admin'" [jobId]="item.id"
+          (jobDeleted)="onJobDeleted()"></app-delete-job>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
