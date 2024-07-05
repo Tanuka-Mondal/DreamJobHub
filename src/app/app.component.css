@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+.nav-custom{
+    background-color: #6666f3;
+}
+.mat-mdc-icon-button {
+    color:white;
+}
+.nav-brand{
+    color:white;
+    font-weight: bold;
+}
