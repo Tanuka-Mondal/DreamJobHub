@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span><a mat-list-item href="#" class="nav-brand">Dream Job Hub</a></span>
+  <a href="" class="header-items" routerLink="display-jobs">Job</a>
+  <a href="" class="header-items">Company</a>
+  <a href="" class="header-items" *ngIf="userLoggedinStatus && userRole === 'User'">Applied Jobs</a>
+  <a href="" class="header-items" *ngIf="userLoggedinStatus && userRole === 'Admin'" routerLink="add-job">Add Jobs</a>
+  <a href="" class="header-items" *ngIf="userLoggedinStatus && userRole === 'Admin'" routerLink="admin-dashboard">All Users</a>
+
+  <span class="example-spacer"></span>
+  <button mat-raised-button routerLink="register-user" class="nav-button" *ngIf="!userLoggedinStatus">Register</button>
+  <button mat-raised-button routerLink="login-user" class="nav-button" *ngIf="!userLoggedinStatus">Login</button>
+  <button mat-raised-button routerLink="logout" class="nav-button" *ngIf="userLoggedinStatus">Logout</button>
+  <button mat-icon-button *ngIf="userLoggedinStatus" routerLink="profile" aria-label="User profile"><mat-icon>account_circle</mat-icon></button>
+  <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+</mat-toolbar>
