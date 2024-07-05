@@ -1,0 +1,9 @@
+.jobCard{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.job-detail-card{
+    width: 400px;
+}
