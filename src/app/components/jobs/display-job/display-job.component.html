@@ -1,0 +1,23 @@
+<!-- display-job.component.html -->
+
+<div class="jobCard">
+    <mat-card *ngIf="jobDetails" class="job-detail-card">
+        <mat-card-header>
+            <mat-card-title class="job-title">{{ jobDetails.jobTitle }}</mat-card-title>
+            <mat-card-subtitle>{{ jobDetails.companyName }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p><strong>Description:</strong> {{ jobDetails.jobDescription }}</p>
+            <p><strong>Location:</strong> {{ jobDetails.jobLocation }}</p>
+            <p><strong>Category:</strong> {{ jobDetails.category }}</p>
+            <p><strong>Salary:</strong> {{ jobDetails.salary | currency:'INR' }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary">Apply for Job</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<div *ngIf="!jobDetails" class="no-job-details">
+    <p>No job details available.</p>
+</div>
