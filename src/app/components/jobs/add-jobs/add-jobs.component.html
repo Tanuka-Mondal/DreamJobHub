@@ -1,0 +1,53 @@
+<form class="user-registration" [formGroup]="addJobFormRef" (ngSubmit)="addJob(addJobFormRef)">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Job data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type Job Details
+          <mat-icon>business_center</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="registration-form">
+        <mat-form-field>
+          <mat-label>Job Title</mat-label>
+          <input matInput formControlName="jobTitle" id="jobTitle">
+          <small class="validation-text" *ngIf="addJobFormRef.get('jobTitle')?.touched && addJobFormRef.
+          get('jobTitle')?.hasError('required')">Please type a Job Title</small>
+          
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Company Name</mat-label>
+          <input matInput formControlName="companyName" id="companyName">
+          <small class="validation-text" *ngIf="addJobFormRef.get('companyName')?.touched && addJobFormRef.
+          get('companyName')?.hasError('required')">Please type Company Name</small>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Job Description</mat-label>
+          <input matInput formControlName="jobDescription" id="jobDescription">
+          <small class="validation-text" *ngIf="addJobFormRef.get('jobDescription')?.touched && addJobFormRef.
+          get('jobDescription')?.hasError('required')">Please type Job Description</small>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Job Location</mat-label>
+          <input matInput formControlName="jobLocation" id="jobLocation">
+          <small class="validation-text" *ngIf="addJobFormRef.get('jobLocation')?.touched && addJobFormRef.
+          get('jobLocation')?.hasError('required')">Please type Job Location</small>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <input matInput formControlName="category" id="category">
+          <small class="validation-text" *ngIf="addJobFormRef.get('category')?.touched && addJobFormRef.
+          get('category')?.hasError('required')">Please type category</small>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Salary</mat-label>
+          <input matInput formControlName="salary" id="salary">
+          <small class="validation-text" *ngIf="addJobFormRef.get('salary')?.touched && addJobFormRef.
+          get('salary')?.hasError('required')">Please type Salary</small>
+        </mat-form-field>
+        <button [disabled]="addJobFormRef.invalid" mat-raised-button color="primary" type="submit">Add</button>
+      </div>
+    </mat-expansion-panel>
+  </form>
